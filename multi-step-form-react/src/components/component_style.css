@@ -1,0 +1,230 @@
+.menu-card {
+    display: flex;
+    gap: 1rem;
+    width: fit-content;
+    align-items: center; 
+}
+
+.menu-card > div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 2.5rem;
+    aspect-ratio: 1;
+    font-weight: 600;
+}
+
+.menu-card .menu-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-card .menu-card-content h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0;
+    color: hsl(229, 24%, 87%);
+}
+
+.menu-card .menu-card-content p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+}
+
+.menu-card .active {
+    background-color: hsl(206, 94%, 87%);
+    color: black;
+}
+
+.menu-card .default {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+/* End of Menu Card */
+/* ---------------------- */
+/* Start of Step Header */
+
+.step-header {
+    margin-bottom: 3rem;
+}
+
+.step-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+    color: hsl(213, 96%, 18%);
+}
+
+.step-header p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0;
+    color: hsl(231, 11%, 63%);
+}
+
+/* End of Step Header */
+/* ---------------------- */
+/* Start of Input Form */
+
+.input-info {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-info label {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: hsl(213, 96%, 18%);
+}
+
+.input-info input {
+    font-size: 1.25rem;
+    padding: 0.75rem;
+    border: 1px solid hsl(231, 11%, 63%);
+    border-radius: 0.5rem;
+}
+
+.input-info input:focus {
+    outline: none;
+    border: 1px solid hsl(213, 96%, 18%);
+}
+
+/* End of Input Form */
+/* ---------------------- */
+/* Start of Plan Card */
+
+.plan-card {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 1.5rem;
+    border: 1px solid hsl(231, 11%, 63%);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.plan-card #active {
+    border: 2px solid blue;
+}
+
+.plan-card .plan-card_img {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+}
+.plan-card .arcade {
+    background-image: url('../assets/images/icon-arcade.svg');
+}
+.plan-card .advanced {
+    background-image: url('../assets/images/icon-advanced.svg');
+}
+.plan-card .pro {
+    background-image: url('../assets/images/icon-pro.svg');
+}
+
+.plan-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: hsl(213, 96%, 18%);
+    text-transform: capitalize;
+}
+.plan-card p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    color: hsl(231, 11%, 63%);
+}
+
+/* End of Plan Card */
+/* --------------------- */
+/* Start of Add-on Card */
+
+.addon-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* Define 3 columns: auto (checkbox), 1fr (details), auto (price) */
+    gap: 1rem; /* Add spacing between grid items */
+    align-items: center; /* Vertically align all items */
+    padding: 1.25rem 1rem;
+    border: 1px solid #ddd; /* Optional border for styling */
+    border-radius: 0.5rem;
+    background-color: hsl(231, 100%, 99%);/* Light background */
+    margin-bottom: 1rem;
+  }
+  
+  .addon-card input {
+    grid-column: 1; /* First column (checkbox) */
+    width: 4rem;
+    height: 20px;
+  }
+  
+  .addon-card-details {
+    grid-column: 2; /* Second column (details) */margin: 4px 0 0; /* Optional margin for spacing */
+  }
+  
+  .addon-card-details h4 {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
+  }
+  
+  .addon-card-details p {
+    color: hsl(231, 11%, 63%);
+    margin-top: 0.5rem;
+  }
+  
+  .addon-card p {
+    margin-top: 1.75rem;
+    grid-column: 3; /* Third column (price) */
+    margin: 0;
+    color: hsl(243, 100%, 62%); /* Highlighted color for price */
+  }
+  
+/* End of Addon */
+/* ------------------ */
+/* Start of Final Data */
+
+.final-data {
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    background-color: hsl(231, 100%, 99%);
+}
+
+.final-data-split {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+}
+
+.final-data-split p, a {
+    color: hsl(231, 11%, 63%);
+    font-size: 1.1rem;
+}
+
+.final-data-split h4, h5 {
+    color: hsl(213, 96%, 18%);
+    font-size: 1.25rem;
+}
+
+.final-data-split button {
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.final-data-split h6 {
+    font-size: 1.1rem;
+}
