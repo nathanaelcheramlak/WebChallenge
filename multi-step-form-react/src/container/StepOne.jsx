@@ -1,29 +1,19 @@
-import PropTypes from 'prop-types';
+import { useForm } from '../context/useForm';
 import './container_style.css';
 import StepHeader from '../components/StepHeader';
 import InputInfo from '../components/InputInfo';
 
-const StepOne = ({ value, setValue }) => {
-  const handleChange = (e) => {
-    setValue({
-      ...value,
-      [e.target.name]: e.target.value
-    });
-  };
+const StepOne = () => {
+  const { personal, handlePersonal } = useForm();
 
   return (
     <section className='step-one'>
       <StepHeader title={'Personal Info'} description={'Please provide your name, email address, and phone number.'}/>
-      <InputInfo name={'Name'} placeholder={'e.g. Stephen King'} value={value.name} setValue={handleChange}/>
-      <InputInfo name={'Email Address'} placeholder={'e.g. stephenking@lorem.com'} type={'email'} value={value.email} setValue={handleChange}/>
-      <InputInfo name={'Phone Number'} placeholder={'e.g. +1 234 567 890'} value={value.phone} setValue={handleChange}/>
+      <InputInfo name="name" placeholder="e.g. Stephen King" value={personal.name} onChange={handlePersonal} />
+      <InputInfo name="email" placeholder="e.g. stephenking@lorem.com" type="email" value={personal.email} onChange={handlePersonal} />
+      <InputInfo name="phone" placeholder="e.g. +1 234 567 890" value={personal.phone} onChange={handlePersonal} />
     </section>
-  )
-}
-
-StepOne.propTypes = {
-  value: PropTypes.object.isRequired,
-  setValue: PropTypes.func.isRequired,
+  );
 };
 
-export default StepOne
+export default StepOne;

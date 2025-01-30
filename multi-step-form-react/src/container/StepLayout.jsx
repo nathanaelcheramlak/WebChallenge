@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useForm } from '../context/useForm';
 import './container_style.css';
 import StepOne from './StepOne';
 import StepTwo from './StepTwo';
@@ -7,31 +7,18 @@ import StepFour from './StepFour';
 import StepFive from './StepFive';
 
 const StepLayout = () => {
-    const [currentStep, setCurrentStep] = useState(2);
-    // Step One States
-    const [personal, setPersonal] = useState({
-        name: '',
-        email: '',
-        phone: ''
-    });
-
-    // Step Two States
-    const [plan, setPlan] = useState({
-        plan: '',
-        duration: ''
-    });
-
+    const { step, handleNextStep, handlePrevStep } = useForm();
   return (
     <div className="step-layout">
-        {/* <StepOne value={personal} setValue={setPersonal} /> */}
-        {/* <StepTwo value={plan} setValue={setPlan}/> */}
-        {/* <StepThree /> */}
-        {/* <StepFour /> */}
-        <StepFive />
-        { currentStep !== 5 && 
+        { step === 1 && <StepOne /> }
+        { step === 2 && <StepTwo /> }
+        { step === 3 && <StepThree /> }
+        { step === 4 && <StepFour /> }
+        { step === 5 && <StepFive /> }
+        { step !== 6 && 
         <div className='button-group'>
-            {currentStep !== 1 && <button className='back-button'>Go Back</button>}
-            <button className='next-button'>{currentStep === 4 ? `Confirm` : `Next Step`}</button>
+            {step !== 1 && <button className='back-button'  onClick={handlePrevStep}>Go Back</button>}
+            <button className='next-button' onClick={handleNextStep}>{ step === 4 ? `Confirm` : `Next Step`}</button>
         </div>
         }
     </div>

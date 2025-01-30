@@ -1,21 +1,29 @@
 import PropTypes from 'prop-types';
+import { useForm } from '../context/useForm';
 import './component_style.css';
 
-const InputInfo = ({ name, placeholder, type = 'text', value, setValue }) => {
+const InputInfo = ({ name, placeholder, type = 'text' }) => {
+  const { personal, handlePersonal } = useForm();
+
   return (
-    <form className='input-info'>
-      <label>{name}</label>
-      <input type={type} name="name" value={value} placeholder={placeholder} onChange={setValue} />
-    </form>
-  )
-}
+    <div className='input-info'>
+      <label htmlFor={name}>{name}</label>
+      <input 
+        type={type} 
+        id={name} 
+        name={name} 
+        value={personal[name]}
+        placeholder={placeholder} 
+        onChange={handlePersonal} 
+      />
+    </div>
+  );
+};
 
 InputInfo.propTypes = {
     name: PropTypes.string.isRequired,
     placeholder: PropTypes.string.isRequired,
-    type: PropTypes.string,
-    value: PropTypes.string.isRequired,
-    setValue: PropTypes.func.isRequired
+    type: PropTypes.string
 };
 
-export default InputInfo
+export default InputInfo;

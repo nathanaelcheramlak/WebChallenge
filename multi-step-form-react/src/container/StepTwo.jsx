@@ -1,17 +1,18 @@
-import PropTypes from 'prop-types';
 import './container_style.css';
 import StepHeader from '../components/StepHeader';
 import PlanCard from '../components/PlanCard';
+import { useForm } from '../context/useForm';
 
-
-const StepTwo = ({ value, setValue }) => {
+const StepTwo = () => {
+  const { plan, handlePlan, isMonthly, handleMonthly } = useForm();
+  
   return (
     <section className='step-two'>
       <StepHeader title={'Select your plan'} description={'You have the option of monthly or yearly billing.'}/>
       <div className='plan-card_container'>
-        <PlanCard title={'arcade'} yearly_rate={90} isActive={'pro'}/>
-        <PlanCard title={'advanced'} yearly_rate={120} isActive={'pro'} />
-        <PlanCard title={'pro'} yearly_rate={150} isActive={'pro'} />
+        <PlanCard title={'arcade'} yearly_rate={90} />
+        <PlanCard title={'advanced'} yearly_rate={120} />
+        <PlanCard title={'pro'} yearly_rate={150} />
       </div>
       <div className='step-two_switch'>
         <p id='active'>Monthly</p>
@@ -24,10 +25,5 @@ const StepTwo = ({ value, setValue }) => {
     </section>
   )
 }
-
-StepTwo.protoTypes = {
-  value: PropTypes.object.isRequired,
-  setValue: PropTypes.func.isRequired
-};
 
 export default StepTwo;
