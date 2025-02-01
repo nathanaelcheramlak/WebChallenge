@@ -15,6 +15,7 @@ const InputInfo = ({ name, placeholder, type = 'text' }) => {
         value={personal[name]}
         placeholder={placeholder} 
         onChange={handlePersonal} 
+        required
       />
     </div>
   );
