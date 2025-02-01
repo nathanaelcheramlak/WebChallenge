@@ -111,7 +111,7 @@
     cursor: pointer;
 }
 
-.plan-card #active {
+#active-plan {
     border: 2px solid blue;
 }
 
@@ -213,6 +213,7 @@
 .final-data-split h4, h5 {
     color: hsl(213, 96%, 18%);
     font-size: 1.25rem;
+    text-transform: capitalize;
 }
 
 .final-data-split button {
