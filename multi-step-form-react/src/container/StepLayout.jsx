@@ -15,7 +15,7 @@ const StepLayout = () => {
         { step === 3 && <StepThree /> }
         { step === 4 && <StepFour /> }
         { step === 5 && <StepFive /> }
-        { step !== 6 && 
+        { step !== 5 && 
         <div className='button-group'>
             {step !== 1 && <button className='back-button'  onClick={handlePrevStep}>Go Back</button>}
             <button className='next-button' onClick={handleNextStep}>{ step === 4 ? `Confirm` : `Next Step`}</button>
