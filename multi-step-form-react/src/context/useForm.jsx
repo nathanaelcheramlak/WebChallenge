@@ -47,6 +47,14 @@ export const FormProvider = ({ children }) => {
         }));
     };
 
+    const handleServices = (service) => {
+        if (services.includes(service)) {
+            setServices((prev) => prev.filter((item) => item !== service));
+        } else {
+            setServices((prev) => [...prev, service]);
+        }
+    }
+
     return (
         <FormContext.Provider value={{
             step, setStep,
@@ -54,7 +62,7 @@ export const FormProvider = ({ children }) => {
             isMonthly, setIsMonthly,
             plan, setPlan,
             services, setServices,
-            handleNextStep, handlePrevStep, handleMonthly, handlePlan, handlePersonal
+            handleNextStep, handlePrevStep, handleMonthly, handlePlan, handlePersonal, handleServices
         }}>
             {children}
         </FormContext.Provider>
