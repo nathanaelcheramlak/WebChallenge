@@ -112,7 +112,7 @@
 }
 
 #active-plan {
-    border: 2px solid blue;
+    border: 3px solid blue;
 }
 
 .plan-card .plan-card_img {
@@ -187,6 +187,10 @@
     grid-column: 3; /* Third column (price) */
     margin: 0;
     color: hsl(243, 100%, 62%); /* Highlighted color for price */
+  }
+
+  #selected {
+    background-color: hsl(206, 94%, 95%);
   }
   
 /* End of Addon */
