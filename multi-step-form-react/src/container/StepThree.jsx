@@ -6,9 +6,9 @@ const StepThree = () => {
   return (
     <section>
       <StepHeader title='Pick add-ons' description='Add-ons help enhance your gaming experience.' />
-      <AddOnCard title='Online service' description={'Access to multiplayer games'} price={'+$1/mo'}/>
-      <AddOnCard title='Online service' description={'Access to multiplayer games'} price={'+$1/mo'}/>
-      <AddOnCard title='Online service' description={'Access to multiplayer games'} price={'+$1/mo'}/>
+      <AddOnCard service={'online-service'} title='Online service' description={'Access to multiplayer games'} />
+      <AddOnCard service={'larger-storage'} title='Larger storage' description={'Extra 1TB of cloud save'} />
+      <AddOnCard service={'custom-profile'} title='Customizable Profile' description={'Custom theme on your profile'} />
     </section>
   )
 }
